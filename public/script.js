@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
+    function isValidIP(ipAddress) {
+        var regex = new RegExp(/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/);
+        return regex.test(ipAddress);
+    }
+
     function updateMap(ipData) {
         if (ipData.location && ipData.location.lat && ipData.location.lng) {
             map.setView([ipData.location.lat, ipData.location.lng], 13);
@@ -53,6 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("IPSubmitForm").addEventListener("submit", function (event) {
         event.preventDefault();
         var ipAddress = document.getElementById("IPInput").value;
+
+        if (!isValidIP(ipAddress)) {
+            alert("Please enter a valid IP address.");
+            return;
+        }
 
         fetch(`http://localhost:3000/api/?ipAddress=${ipAddress}`)
             .then(response => {
