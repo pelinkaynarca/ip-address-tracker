@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // function to get user's IP address on initial page load
     function getUserLocation() {
-        fetch("http://localhost:3000/api/location")
+        fetch("{process.env.API_URL}/api/location")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        fetch(`http://localhost:3000/api/?ipAddress=${ipAddress}`)
+        fetch(`{process.env.API_URL}/api/?ipAddress=${ipAddress}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
