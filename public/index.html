@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Tracker</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="./script.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body class="overflow-hidden h-dvh w-dvw font-default">
+    <div id="header"
+        class="relative z-20 flex flex-col items-center w-full h-64 gap-6 pt-6 bg-cover bg-mobile-header desktop:bg-desktop-header">
+        <h1 class="text-2xl font-medium text-white">IP Address Tracker</h1>
+        <form id="IPSubmitForm" class="flex flex-row h-[52px] desktop:w-[600px] w-80 justify-center">
+            <input id="IPInput" type="text" placeholder="IP Address here"
+                class="focus:placeholder:opacity-0 w-64 h-full p-5 desktop:w-[536px] rounded-s-lg placeholder:text-very-dark-gray">
+            <button id="IpSubmitButton" class="flex items-center justify-center w-16 h-full bg-black hover:bg-gray-700 rounded-e-xl"><img
+                    src="./images/icon-arrow.svg" alt="icon"></button>
+        </form>
+        <div id="IPTrackingDetails"
+            class="text-center absolute z-10 items-center flex flex-col gap-6 desktop:p-5 p-5 desktop:gap-0 bg-white desktop:h-36 desktop:w-[1200px] desktop:flex-row h-72 w-80 top-40 desktop:top-44 rounded-xl">
+            <div id="IPAddressInfoWrapper"
+                class="flex flex-col items-center desktop:gap-2 desktop:border-r-2 desktop:w-1/4 desktop:h-4/5 h-3/4">
+                <p id="IPAddressTitle" class=" desktop:text-xs text-[10px] font-semibold uppercase text-dark-gray">ip
+                    address</p>
+                <p id="IPAddress" class="flex items-center text-base font-bold desktop:h-32 desktop:text-xl text-very-dark-gray"></p>
+            </div>
+            <div id="LocationInfoWrapper" class="flex flex-col items-center desktop:gap-2 desktop:border-r-2 desktop:w-1/4 desktop:h-4/5 h-3/4">
+                <p id="LocationTitle" class="desktop:text-xs text-[10px] font-semibold uppercase text-dark-gray">
+                    location</p>
+                <p id="Location" class="flex items-center text-base font-bold desktop:h-32 desktop:text-xl text-very-dark-gray"></p>
+            </div>
+            <div id="TimezoneInfoWrapper" class="flex flex-col items-center desktop:gap-2 desktop:border-r-2 desktop:w-1/4 desktop:h-4/5 h-3/4">
+                <p id="TimezoneTitle" class="desktop:text-xs text-[10px] font-semibold uppercase text-dark-gray">
+                    timezone</p>
+                <p id="Timezone" class="flex items-center text-base font-bold desktop:h-32 desktop:text-xl text-very-dark-gray"></p>
+            </div>
+            <div id="ISPInfoWrapper" class="flex flex-col items-center desktop:gap-2 desktop:w-1/4 h-3/4 desktop:h-4/5">
+                <p id="ISPTitle" class="desktop:text-xs text-[10px] font-semibold uppercase text-dark-gray">isp</p>
+                <p id="ISP" class="flex items-center w-3/4 text-base font-bold desktop:h-32 desktop:text-xl text-very-dark-gray"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="relative z-0 w-screen h-full"></div>
+</body>
+
+</html>
