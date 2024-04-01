@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // function to get user's IP address on initial page load
     function getUserLocation() {
-        fetch("{process.env.API_URL}/api/location")
+        fetch("https://ip-address-tracker-fm.onrender.com/api/location")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        fetch(`{process.env.API_URL}/api/?ipAddress=${ipAddress}`)
+        fetch(`https://ip-address-tracker-fm.onrender.com/api/?ipAddress=${ipAddress}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
