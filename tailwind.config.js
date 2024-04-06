@@ -11,8 +11,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'mobile-header': "url('../public/images/pattern-bg-mobile.png')",
-        'desktop-header': "url('../public/images/pattern-bg-desktop.png')"
+        'mobile-header': "url('/public/images/pattern-bg-mobile.png')",
+        'desktop-header': "url('/public/images/pattern-bg-desktop.png')"
       },
       colors: {
         'dark-gray': 'hsl(0, 0%, 59%)',

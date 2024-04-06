@@ -683,7 +683,7 @@ video {
 }
 
 .bg-mobile-header {
-  background-image: url('../public/images/pattern-bg-mobile.png');
+  background-image: url('/public/images/pattern-bg-mobile.png');
 }
 
 .bg-cover {
@@ -824,7 +824,7 @@ video {
   }
 
   .desktop\:bg-desktop-header {
-    background-image: url('../public/images/pattern-bg-desktop.png');
+    background-image: url('/public/images/pattern-bg-desktop.png');
   }
 
   .desktop\:p-5 {
